@@ -107,6 +107,18 @@ new Vue({
 * `content`
 * `footer`
 
+# Responsive
+I suggest to use the [Vue mq](https://github.com/AlexandreBonaventure/vue-mq) plugin to modify the props based on the user device screen.
+In this way you can modify the whole behaviour of the modal for different resolutions.
+Eg:
+```
+:column-max-width="$mq | mq({
+    sm: '350px',
+    md: '500px',
+    lg: '600px'
+})"
+```
+
 # Authors
 
 * **Adileo Barone**
