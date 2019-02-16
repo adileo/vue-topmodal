@@ -95,6 +95,14 @@ export default {
       type: String,
       default: null
     },
+    modalBackground: {
+      type: String,
+      default: 'white'
+    },
+    modalBorder: {
+      type: String,
+      default: '0px'
+    },
     contentPadding: {
       type: String,
       default: '1em'
@@ -137,7 +145,9 @@ export default {
         'position': 'relative',
         'border-radius': this.modalBorderRadius,
         'box-shadow': this.modalBoxShadow,
-        'height': this.modalHeight
+        'height': this.modalHeight,
+        'background': this.modalBackground,
+        'border': this.modalBorder
       }
       if(this.modalPosition === 'center'){
         styles = {
@@ -271,7 +281,6 @@ export default {
 }
 .topmodal-modal{
   width: 100%;
-  background-color: white;
 }
 
 
