@@ -229,7 +229,7 @@ export default {
         }
       }else{
         this.showModal = false
-        if(this.scrollLock){
+        if(this.scrollLock && this.open === true){
           var elements = this.$el.querySelectorAll(".topmodal-scrollable-lock")
           for (var i = 0; i < elements.length; ++i) {
             enableBodyScroll(elements[i])
