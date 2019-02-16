@@ -120,7 +120,7 @@ Eg:
 
 # Structure
 <p align="center">
-<img src="https://github.com/adileo/vue-topmodal/raw/master/structure.png" height="403" alt="Structure"/>
+<img src="https://github.com/adileo/vue-topmodal/raw/master/structure.png" width="100%" alt="Structure"/>
 </p>
 
 # Authors
