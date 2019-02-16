@@ -1,5 +1,5 @@
 <p align="center">
-<img src="topmodal.png" width="247" height="172" alt="Screenshot"/>
+<img src="https://github.com/adileo/vue-topmodal/raw/master/topmodal.png" width="480" alt="Screenshot"/>
 </p>
 
 <p align="center">
@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-Stop using broken modals.
+Stop wasting time fixing broken modals. A fully customisable modal component.
 </p>
 
 # Features
@@ -20,24 +20,38 @@ Stop using broken modals.
 * Background colors and gradients
 * Header / Footer / Content Slots
 
+Demo: [jsFiddle](https://jsfiddle.net/adileo/eqah2189/)
 # Getting started
 
-1. Install the plugin:
+1. Install the component:
 
 ```
 npm install --save vue-topmodal
 ```
-or 
 ```
 yarn add vue-topmodal
 ```
 
-2. Add the plugin into your app:
+2. (Option A) Add the component into your app:
 
 ```javascript
 import Vue from 'vue'
 import TopModal from 'vue-topmodal'
 
-Vue.use(TopModal)
+Vue.component('top-modal', TopModal)
 ```
 
+2. (Option B) Include JS & CSS:
+```html
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/vue-topmodal/dist/TopModal.css">
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue-topmodal"></script>
+<script>
+new Vue({
+  components: {
+    TopModal,
+  },
+  el: "#app",
+})
+</script>
+```

@@ -72,7 +72,7 @@
     @close="showModal3=false"
     >
     <template v-slot:content>
-      <div class="popmodal-scrollable popmodal-scrollable-lock" style="width: 100%;height: 100px;">
+      <div class="topmodal-scrollable topmodal-scrollable-lock" style="width: 100%;height: 100px;">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut ipsum a dolor ultricies volutpat. Quisque in ornare tortor. Cras ut mi efficitur, varius massa vitae, porttitor neque. Aliquam sollicitudin dignissim libero, sed congue nibh auctor et. Duis fringilla lorem ultricies elit euismod malesuada. Fusce consequat sem ac maximus luctus. Ut imperdiet libero magna, ut consectetur lorem ornare a. Morbi pharetra urna lacus, tincidunt semper purus suscipit posuere. Quisque at sollicitudin nisi. In sed purus id eros aliquet hendrerit sit amet sit amet lectus. Mauris molestie, lorem hendrerit hendrerit pulvinar, dolor tortor accumsan sem, id volutpat tellus diam nec tellus. Donec nibh eros, sodales ac ullamcorper ut, blandit nec nisl. Cras ultricies diam id massa facilisis fringilla.
       </div>
     

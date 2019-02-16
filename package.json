@@ -1,9 +1,11 @@
 {
   "name": "vue-topmodal",
   "license": "MIT",
-  "version": "0.1.1",
+  "version": "0.1.7",
   "private": false,
-  "main": "./dist/topmodal.common.js",
+  "main": "./dist/TopModal.common.js",
+  "unpkg": "./dist/TopModal.umd.min.js",
+  "homepage": "https://github.com/adileo/vue-topmodal",
   "files": [
     "dist/*",
     "src/*",
@@ -15,7 +17,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-bundle": "vue-cli-service build --target lib --name topmodal ./src/components/index.js"
+    "build-bundle": "vue-cli-service build --target lib --name TopModal ./src/components/TopModal.vue"
   },
   "dependencies": {
     "body-scroll-lock": "^2.6.1",

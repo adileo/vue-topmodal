@@ -8,11 +8,11 @@
       <transition :name="modalAnimation" v-on:after-leave="closed" appear>
         <div v-show="showModal" class="topmodal-column" :style="columnStyle" @click="bgClicked">
           <div class="topmodal-modal" :style="modalStyle" v-on:click.stop>
+            <slot name="header"></slot>
             <div class="topmodal-content" :style="contentStyle">
-              <slot name="header"></slot>
               <slot name="content"></slot>
-              <slot name="footer"></slot>
             </div>
+            <slot name="footer"></slot>
           </div>
         </div>
       </transition>
@@ -116,27 +116,7 @@ export default {
   },
   watch: {
     open: function(newV){
-      if(newV){
-        this.mounted = true
-        this.showModal = true
-        if(this.scrollLock){
-          this.$nextTick(() => {
-            var elements = this.$el.querySelectorAll(".topmodal-scrollable-lock")
-            for (var i = 0; i < elements.length; ++i) {
-              disableBodyScroll(elements[i])
-            }
-          })
-        }
-      }else{
-        this.showModal = false
-
-        if(this.scrollLock){
-          var elements = this.$el.querySelectorAll(".topmodal-scrollable-lock")
-          for (var i = 0; i < elements.length; ++i) {
-            enableBodyScroll(elements[i])
-          }
-        }
-      }
+      this.switchOpen(newV)
     }
   },
   computed: {
@@ -227,7 +207,32 @@ export default {
     closed: function () {
       this.mounted = false
       this.$emit('closed')
+    },
+    switchOpen: function (newV) {
+      if(newV){
+        this.mounted = true
+        this.showModal = true
+        if(this.scrollLock){
+          this.$nextTick(() => {
+            var elements = this.$el.querySelectorAll(".topmodal-scrollable-lock")
+            for (var i = 0; i < elements.length; ++i) {
+              disableBodyScroll(elements[i])
+            }
+          })
+        }
+      }else{
+        this.showModal = false
+        if(this.scrollLock){
+          var elements = this.$el.querySelectorAll(".topmodal-scrollable-lock")
+          for (var i = 0; i < elements.length; ++i) {
+            enableBodyScroll(elements[i])
+          }
+        }
+      }
     }
+  },
+  mounted: function () {
+    this.switchOpen(this.open)
   }
 }
 </script>
