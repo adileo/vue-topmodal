@@ -79,7 +79,7 @@ new Vue({
 * `bg` (String): Background behind the modal.
 * `bg-image` (String): Background behind the modal, useful for images or gradients.
 * `bg-animation` (String): Name of the animation to use. Default to `bg`
-* `containerScrollable` (Boolean): Set to true if you want a scrollable modal.
+* `container-scrollable` (Boolean): Set to true if you want a scrollable modal.
 * `column-position` (String): Set the horizontal alignment of the modal. Valid values are: `left`,`right`,`center`
 * `column-right` (String): Space from right, eg. `10%`. Only valid if `column-position` is `right`.
 * `column-left` (String): Space from left, eg. `10px`. Only valid if `column-position` is `left`.
