@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/adileo/vue-topmodal/raw/master/topmodal.png" width="480" alt="Screenshot"/>
+<img src="https://github.com/adileo/vue-topmodal/raw/master/topmodal.png" width="480" alt="vue-popmodal"/>
 </p>
 
 <p align="center">
@@ -59,14 +59,13 @@ new Vue({
 <top-modal 
 :open="showModal1"
 :z-index="1000"
-:close-on-bg-click="true"
 :bg-image="'radial-gradient(50% 54%, #53A0FD 50%, #4F3EEB 200%)'"
 :column-position="'center'"
 :column-max-width="'300px'"
 :modal-position="'center'"
 :modal-border-radius="'5px'"
 :modal-box-shadow="'0 0 9px 7px rgba(0,0,0,0.09)'"
-@close="showModal1=false">
+@bg-click="showModal1=false">
     <template v-slot:header></template>
     <template v-slot:content>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut ipsum a dolor ultricies volutpat.
@@ -77,7 +76,6 @@ new Vue({
 # Props
 * `open` (Boolean): Open or close the modal.
 * `z-index` (Number): Z-index of the modal.
-* `close-on-bg-click` (Boolean): Trigger `close` event on background click.
 * `bg` (String): Background behind the modal.
 * `bg-image` (String): Background behind the modal, useful for images or gradients.
 * `bg-animation` (String): Name of the animation to use. Default to `bg`
@@ -99,8 +97,9 @@ new Vue({
 * `scroll-lock` (Boolean): Enable/Disable scroll lock. Enabled by default.
 
 # Events
-* `close`: Fired when the user click on the background behind the modal
-* `closed`: Animations ended and modal unmounted
+* `bg-click`: Fired when the user click on the background behind the modal
+* `opened`: Open animation ended
+* `closed`: Hide animation ended, modal closed and unmounted
 
 # Slots
 * `header`
@@ -118,6 +117,11 @@ Eg:
     lg: '600px'
 })"
 ```
+
+# Structure
+<p align="center">
+<img src="https://github.com/adileo/vue-topmodal/raw/master/structure.png" height="403" alt="Structure"/>
+</p>
 
 # Authors
 

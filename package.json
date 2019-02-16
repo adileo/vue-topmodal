@@ -1,7 +1,7 @@
 {
   "name": "vue-topmodal",
   "license": "MIT",
-  "version": "0.1.9",
+  "version": "0.2.1",
   "private": false,
   "main": "./dist/TopModal.common.js",
   "unpkg": "./dist/TopModal.umd.min.js",
@@ -56,5 +56,15 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
+  ],
+  "keywords": [
+    "vue",
+    "vue.js",
+    "modal",
+    "alert",
+    "overlay",
+    "dialog",
+    "lightbox",
+    "popup"
   ]
 }

@@ -5,7 +5,7 @@
       </div>
     </transition>
     <div class="topmodal-scroll-container topmodal-scrollable-lock" :class="{'topmodal-scrollable': containerScrollable}" @click="bgClicked">
-      <transition :name="modalAnimation" v-on:after-leave="closed" appear>
+      <transition :name="modalAnimation" v-on:after-leave="closed" v-on:after-enter="opened" appear>
         <div v-show="showModal" class="topmodal-column" :style="columnStyle" @click="bgClicked">
           <div class="topmodal-modal" :style="modalStyle" v-on:click.stop>
             <slot name="header"></slot>
@@ -30,10 +30,6 @@ export default {
     open: {
       type: Boolean,
       default: false,
-    },
-    closeOnBgClick: {
-      type: Boolean,
-      default: true,
     },
     bg: {
       type: String,
@@ -210,13 +206,14 @@ export default {
   },
   methods: {
     bgClicked: function () {
-      if(this.closeOnBgClick){
-        this.$emit('close')
-      }
+      this.$emit('bg-click')
     },
     closed: function () {
       this.mounted = false
       this.$emit('closed')
+    },
+    opened: function () {
+      this.$emit('opened')
     },
     switchOpen: function (newV) {
       if(newV){
