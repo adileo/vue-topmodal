@@ -3,21 +3,20 @@
 </p>
 
 <p align="center">
-<a href="https://www.npmjs.com/package/vue-topmodal"><img src="https://img.shields.io/npm/v/vue-topmodal.svg"/> <img src="https://img.shields.io/npm/dm/vue-topmodal.svg"/></a> <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.x-brightgreen.svg"/></a>
+<a href="https://www.npmjs.com/package/vue-topmodal"><img src="https://img.shields.io/npm/v/vue-topmodal.svg"/></a> <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.x-brightgreen.svg"/></a>
 </p>
 
 <p align="center">
-Stop wasting time fixing broken modals. A fully customisable modal component.
+A fully customisable Vue.js modal component.
 </p>
 
 # Features
-* Stackable Modals
+* Fully Customisable (borders, shadow, position, colors, backgrounds, width, etc...)
 * Responsive
-* Open and close animations (separate animations for background and modal window)
-* Scrollable & lock scroll on body
-* Customisable modal: borders, shadow, position, colors
+* Scrollable (with lock scroll on body)
+* Stackable (with z-index)
+* Animated (separate animations for background and modal window)
 * Auto-close on background click
-* Background colors and gradients
 * Header / Footer / Content Slots
 
 Demo: [jsFiddle](https://jsfiddle.net/adileo/eqah2189/)
@@ -55,3 +54,10 @@ new Vue({
 })
 </script>
 ```
+## Authors
+
+* **Adileo Barone**
+
+# License
+
+This project is licensed under the MIT License
