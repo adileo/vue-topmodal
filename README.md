@@ -17,6 +17,7 @@ A fully customisable Vue.js modal component.
 * Stackable (with z-index)
 * Animated (separate animations for background and modal window)
 * Auto-close on background click
+* Lightweight <15Kb
 * Header / Footer / Content Slots
 
 Demo: [jsFiddle](https://jsfiddle.net/adileo/eqah2189/)
@@ -130,3 +131,11 @@ Eg:
 # License
 
 This project is licensed under the MIT License
+
+# Contributing
+
+1. Fork it (https://github.com/adileo/vue-topmodal/fork)
+2. Create your feature branch (git checkout -b feature/fooBar)
+3. Commit your changes (git commit -am 'Add some fooBar')
+4. Push to the branch (git push origin feature/fooBar)
+5. Create a new Pull Request
