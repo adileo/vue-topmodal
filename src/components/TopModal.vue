@@ -4,7 +4,7 @@
       <div v-show="showModal" class="topmodal-bg" :style="bgStyle" @click="bgClicked">
       </div>
     </transition>
-    <div class="topmodal-scroll-container topmodal-scrollable-lock" :class="{'topmodal-scrollable': containerScrollable}" @click="bgClicked">
+    <div class="topmodal-scroll-container topmodal-scrollable-lock" ref="scrollContainer" :class="{'topmodal-scrollable': containerScrollable}" @click="bgClicked">
       <transition :name="modalAnimation" v-on:after-leave="closed" v-on:after-enter="opened" appear>
         <div v-show="showModal" class="topmodal-column" :style="columnStyle" @click="bgClicked">
           <div class="topmodal-modal" :style="modalStyle" v-on:click.stop>
@@ -156,8 +156,7 @@ export default {
         styles = {
           ...styles,
           'position': 'relative',
-          'margin-top': this.modalTop,
-          'margin-bottom': this.modalTop,
+          
         }
       }
       if(this.modalPosition === 'bottom'){
@@ -173,6 +172,9 @@ export default {
       var styles = {
         'max-width': this.columnMaxWidth,
         'position': 'relative',
+        'padding-top': this.modalTop,
+        'padding-bottom': this.modalTop,
+        'height': (this.modalHeight === '100%' || this.modalPosition === 'center') ? '100%' : 'auto'
       }
       if(this.columnPosition === 'center'){
         styles = {
@@ -219,28 +221,38 @@ export default {
       if(newV){
         this.mounted = true
         this.showModal = true
-        if(this.scrollLock){
+        // if(this.scrollLock){
           this.$nextTick(() => {
-            var elements = this.$el.querySelectorAll(".topmodal-scrollable-lock")
-            for (var i = 0; i < elements.length; ++i) {
-              disableBodyScroll(elements[i])
-            }
+            // var elements = this.$el.querySelectorAll(".topmodal-scrollable-lock")
+            // for (var i = 0; i < elements.length; ++i) {
+            disableBodyScroll(this.$refs.scrollContainer, {
+              allowTouchMove: el => {
+                while (el && el !== document.body) {
+                  if (el.getAttribute('body-scroll-lock-ignore') !== null) {
+                    return true
+                  }
+                  el = el.parentNode
+                }
+              },
+            })
+            // }
           })
-        }
+        // }
       }else{
         this.showModal = false
-        if(this.scrollLock && this.open === true){
-          var elements = this.$el.querySelectorAll(".topmodal-scrollable-lock")
-          for (var i = 0; i < elements.length; ++i) {
-            enableBodyScroll(elements[i])
-          }
+        if(this.scrollLock){
+          // var elements = this.$el.querySelectorAll(".topmodal-scrollable-lock")
+          // for (var i = 0; i < elements.length; ++i) {
+          enableBodyScroll(this.$refs.scrollContainer)
+          // }
         }
       }
     }
   },
   mounted: function () {
     this.switchOpen(this.open)
-  }
+  },
+
 }
 </script>
 
@@ -273,7 +285,7 @@ export default {
   height: 100%;
 }
 .topmodal-column{
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
 }
 .topmodal-modal{

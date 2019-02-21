@@ -1,7 +1,7 @@
 {
   "name": "vue-topmodal",
   "license": "MIT",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": false,
   "main": "./dist/TopModal.common.js",
   "unpkg": "./dist/TopModal.umd.min.js",
