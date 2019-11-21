@@ -25,7 +25,7 @@ const bodyScrollLock = require('body-scroll-lock');
 const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 const enableBodyScroll = bodyScrollLock.enableBodyScroll;
 export default {
-  name: 'HelloWorld',
+  name: 'TopModal',
   props: {
     open: {
       type: Boolean,
